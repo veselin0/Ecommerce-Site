@@ -1,15 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
+import { ContextProvider } from "./Context";
 
 import "./index.css";
 import App from "./App";
 
 ReactDOM.render(
-    <div>
+    <ContextProvider>
         <Router>
             <App />
         </Router>
-    </div>,
+    </ContextProvider>,
+
     document.getElementById("root")
 );
