@@ -9,8 +9,8 @@ const ContextProvider = ({ children }) => {
         "https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json";
     useEffect(() => {
         fetch(url)
-            .then(res => res.json())
-            .then(data => setAllPhotos(data))
+            .then((res) => res.json())
+            .then((data) => setAllPhotos(data));
     }, []);
 
     console.log(allPhotos);
