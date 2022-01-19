@@ -1,15 +1,23 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 const Context = createContext();
 
-const ContextProvider = ({children}) => {
+const ContextProvider = ({ children }) => {
     const [allPhotos, setAllPhotos] = useState([]);
 
-    return (
-        <Context.Provider value={{allPhotos}}>
-            {children}
-        </Context.Provider>
-    );
-}
+    const url =
+        "https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json";
+    useEffect(() => {
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setAllPhotos(data))
+    }, []);
 
-export { ContextProvider, Context }; 
+    console.log(allPhotos);
+
+    return (
+        <Context.Provider value={{ allPhotos }}>{children}</Context.Provider>
+    );
+};
+
+export { ContextProvider, Context };
