@@ -29,13 +29,17 @@ const ContextProvider = ({ children }) => {
     };
 
     const addToCart = (newItem) => {
-        setCartItems(prevItems => [...prevItems, newItem]);
-    }
+        setCartItems((prevItems) => [...prevItems, newItem]);
+    };
 
-    console.log(cartItems);
+    const removeFromCart = (id) => {
+        setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
+    };
 
     return (
-        <Context.Provider value={{ allPhotos, toggleFavorite, addToCart, cartItems }}>
+        <Context.Provider
+            value={{ allPhotos, toggleFavorite, addToCart, removeFromCart, cartItems }}
+        >
             {children}
         </Context.Provider>
     );
