@@ -1,7 +1,7 @@
 {
   "name": "pic-pict",
   "version": "0.1.0",
-  "homepage": "https://veselin0.github.io/Ecomerce-Site",
+  "homepage": "https://veselin0.github.io/Ecommerce-Site",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
